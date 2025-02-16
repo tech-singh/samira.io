@@ -1,0 +1,323 @@
+
+  <section class="reels-section">
+    <div class="container">
+      <h4 class="text-uppercase">Our New Arrivals</h4>
+      <div class="row justify-content-center">
+        <div class="col-md-5 position-relative mb-4 mb-md-0">
+          <div class="reel-container">
+            <!-- Background shapes -->
+            <div class="background-shapes">
+              <div class="shape circle"></div>
+              <div class="shape square"></div>
+              <div class="shape circle"></div>
+            </div>
+            <!-- Video -->
+            <video class="reel-video" style="border-radius: 15px;">
+              <source src="images2/reel1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-pause-btn">▶</button>
+          </div>
+        </div>
+        <div class="col-md-5 position-relative">
+          <div class="reel-container">
+            <!-- Background shapes -->
+            <div class="background-shapes">
+              <div class="shape square"></div>
+              <div class="shape circle"></div>
+              <div class="shape square"></div>
+            </div>
+            <!-- Video -->
+            <video class="reel-video" style="border-radius: 15px;">
+              <source src="images2/reel2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-pause-btn">▶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .reels-section {
+      padding: 80px 0;
+      background-color: #ffffff; /* White background for a clean look */
+    }
+  
+    .section-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 40px;
+      letter-spacing: -0.5px;
+    }
+  
+    .reel-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 350px; /* Slightly larger for better visibility */
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+  
+    .reel-video {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .reel-video:hover {
+      transform: scale(1.02); /* Slight zoom effect on hover */
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+  
+    .play-pause-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease, background 0.3s ease;
+      z-index: 3;
+    }
+  
+    .reel-container:hover .play-pause-btn {
+      opacity: 1;
+    }
+  
+    .play-pause-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  
+    .background-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  
+    .shape {
+      position: absolute;
+      background-color: rgba(128, 128, 128, 0.08); /* Lighter gray for subtlety */
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+  
+    .shape.circle {
+      border-radius: 50%;
+    }
+  
+    .shape.square {
+      border-radius: 5px;
+    }
+  
+    /* Random positioning and sizing for shapes */
+    .background-shapes .shape:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: -20px;
+      left: -20px;
+    }
+  
+    .background-shapes .shape:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      bottom: -30px;
+      right: -30px;
+    }
+  
+    .background-shapes .shape:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    /* Hover effects on shapes */
+    .reel-container:hover .shape {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  </style>
+  
+  <script>
+    document.querySelectorAll('.reel-container').forEach(container => {
+      const video = container.querySelector('.reel-video');
+      const playPauseBtn = container.querySelector('.play-pause-btn');
+  
+      // Toggle play/pause when clicking anywhere on the video
+      video.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          playPauseBtn.innerHTML = '❚❚';
+        } else {
+          video.pause();
+          playPauseBtn.innerHTML = '▶';
+        }
+      });
+  
+      // Toggle play/pause when clicking the play/pause button
+      playPauseBtn.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent the video click event from firing
+        if (video.paused) {
+          video.play();
+          playPauseBtn.innerHTML = '❚❚';
+        } else {
+          video.pause();
+          playPauseBtn.innerHTML = '▶';
+        }
+      });
+    });
+  </script> 
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="new-arrival" class="new-arrival product-carousel py-5 position-relative overflow-hidden">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
+        <h4 class="text-uppercase">Our New Arrivals</h4>
+        <a href="shop-sidebar.html" class="btn-link">View All Products</a>
+      </div>
+      <div class="swiper product-swiper open-up" data-aos="zoom-out">
+        <div class="swiper-wrapper d-flex">
+          <div class="swiper-slide">
+            <div class="product-item image-zoom-effect link-effect">
+              <div class="image-holder position-relative">
+                <a href="single-product.html">
+                  <img src="images/product-item-1.jpg" alt="categories" class="product-image img-fluid">
+                </a>
+                <a href="wishlist.html" class="btn-icon btn-wishlist">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </a>
+                <div class="product-content">
+                  <h5 class="element-title text-uppercase fs-5 mt-3">
+                    <a href="single-product.html">Dark florish onepiece</a>
+                  </h5>
+                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$95.00</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product-item image-zoom-effect link-effect">
+              <div class="image-holder position-relative">
+                <a href="single-product.html">
+                  <img src="images/product-item-2.jpg" alt="categories" class="product-image img-fluid">
+                </a>
+                <a href="wishlist.html" class="btn-icon btn-wishlist">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </a>
+                <div class="product-content">
+                  <h5 class="text-uppercase fs-5 mt-3">
+                    <a href="single-product.html">Baggy Shirt</a>
+                  </h5>
+                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$55.00</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product-item image-zoom-effect link-effect">
+              <div class="image-holder position-relative">
+                <a href="single-product.html">
+                  <img src="images/product-item-3.jpg" alt="categories" class="product-image img-fluid">
+                </a>
+                <a href="wishlist.html" class="btn-icon btn-wishlist">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </a>
+                <div class="product-content">
+                  <h5 class="text-uppercase fs-5 mt-3">
+                    <a href="single-product.html">Cotton off-white shirt</a>
+                  </h5>
+                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$65.00</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product-item image-zoom-effect link-effect">
+              <div class="image-holder position-relative">
+                <a href="single-product.html">
+                  <img src="images/product-item-4.jpg" alt="categories" class="product-image img-fluid">
+                </a>
+                <a href="wishlist.html" class="btn-icon btn-wishlist">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </a>
+                <div class="product-content">
+                  <h5 class="text-uppercase fs-5 mt-3">
+                    <a href="single-product.html">Crop sweater</a>
+                  </h5>
+                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$50.00</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product-item image-zoom-effect link-effect">
+              <div class="image-holder position-relative">
+                <a href="single-product.html">
+                  <img src="images/product-item-10.jpg" alt="categories" class="product-image img-fluid">
+                </a>
+                <a href="wishlist.html" class="btn-icon btn-wishlist">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </a>
+                <div class="product-content">
+                  <h5 class="text-uppercase fs-5 mt-3">
+                    <a href="single-product.html">Crop sweater</a>
+                  </h5>
+                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
+          <use xlink:href="#arrow-left"></use>
+        </svg></div>
+      <div class="icon-arrow icon-arrow-right"><svg width="50" height="50" viewBox="0 0 24 24">
+          <use xlink:href="#arrow-right"></use>
+        </svg></div>
+    </div>
+  </section>
